@@ -1,0 +1,80 @@
+{
+        "reload_style_on_change": true,
+        "modules-left": ["hyprland/workspaces"],
+        "modules-right": ["bluetooth", "network", "wireplumber", "backlight", "battery", "clock"],
+        "hyprland/workspaces" : {
+                "persistent-workspaces": {
+                        "*": 3
+                }
+        },
+        "bluetooth": {
+                "format": "",
+                "format-off": "󰂲 ",
+                "format-connected": " ",
+                "format-connected-battery": " {device_battery_percentage}%",
+                "tooltip-format": "{controller_alias}\t{controller_address}",
+                "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+                "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+                "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}"
+
+        },
+        "network": {
+                "interval" : 10,
+                "format-icons": {"wifi": ["󰤯 ","󰤟 ","󰤢 ","󰤥 ","󰤨 "], "ethernet": ["󰈂 "], "disconnected": ["󰤭 "]},
+                "format-wifi": "{icon} {signalStrength}%",
+                "format-ethernet": "{icon}",
+                "format-linked": "{ifname} (No IP) ",
+                "format-disconnected": "{icon}",
+                "tooltip-format-wifi": "{essid}:({ifname}/{gwaddr})",
+                "tooltip-format-ethernet": "{ifname} IP: {ipaddr}/{cidr}",
+                "tooltip-format-disconnected": "Disconnected"
+        },
+        "wireplumber": {
+                "interval": 20,
+                "scroll-step": 5,
+                "format": "{icon}  {volume}%",
+                "format-muted": "  {volume}%",
+                "format-icons": [" ", " ", "  "],
+                "on-click": "wpctl set-mute @DEFAULT_SINK@ toggle"
+        },
+        "backlight": {
+                "device": "intel_backlight",
+                "format": "{icon} {percent}% ",
+                "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+        },
+        "battery": {
+                "interval": 10,
+                "states": {"warning": 30,"critical": 15},
+                "format": "<span size='13000' foreground='#a6e3a1'>{icon}</span>{capacity}%",
+                "format-plugged": "<span size='13000' foreground='#B1E3AD'> </span>{capacity}%",
+                "format-charging": "<span size='13000' foreground='#B1E3AD'></span>{capacity}%",
+                "format-full": "<span size='13000' foreground='#B1E3AD'>{icon}</span>{capacity}%",
+                "format-warning": "<span size='13000' foreground='#B1E3AD'>{icon}</span>{capacity}%",
+                "format-critical": "<span size='13000' foreground='#E38C8F'>{icon}</span>{capacity}%",
+                "format-icons": ["  ", "  ", "  ", "  ", "  "],
+                "tooltip": false
+        },
+        "clock": {
+                "interval": 60,
+                "timezone": "Asia/Dhaka",
+                "format": "  {:%I:%M %p}",  
+                "tooltip-format": "<tt><big>{calendar}</big></tt>",
+                "calendar": {
+                        "mode"          : "month",
+                        "mode-mon-col"  : 3,
+                        "on-scroll"     : 1,
+                        "format": {
+                                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                                "weekdays":   "<span color='#147af3'><b>{}</b></span>",
+                                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                        }
+                },
+                "actions":  {
+                        "on-click-right": "mode",
+                        "on-scroll-up": "tz_up",
+                        "on-scroll-down": "tz_down",
+                        "on-scroll-up": "shift_up",
+                        "on-scroll-down": "shift_down"
+                }        }
+}
