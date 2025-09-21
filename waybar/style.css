@@ -1,0 +1,52 @@
+* {
+  border: 0;
+  border-radius: 0;
+  font-family: "SF Pro Display", "SF Pro Text", sans-serif; 
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: transparent;
+}
+
+#workspaces button {
+  color: #fafafa;
+  border-radius: 26px;
+  background-color: #09090b;
+  margin-left: 14px;
+  margin-top: 7px;
+}
+
+#workspaces button:hover {
+  box-shadow: none;
+  text-shadow: none;
+  background: none;
+  transition: none;
+}
+
+#workspaces button.active {
+  background-color: #147af3;
+}
+
+#clock, #wireplumber, #network, #bluetooth, #battery, #backlight {
+  background-color: #09090b;
+  color: #fafafa;
+  padding: 0 14px;
+  border-radius: 26px;
+  margin-right: 14px;
+  margin-top: 7px;
+}
+
+#clock:hover, #wireplumber:hover, #network:hover, #bluetooth:hover,  #battery:hover, #backlight:hover, #workspaces button:hover   {
+  background-color: #147af3;
+}
+
+#wireplumber.muted {
+  color: red;
+}
+
+tooltip {
+  background-color: #09090b;
+}
+
