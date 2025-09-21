@@ -1,0 +1,48 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+# Revised format to ensure you can type after directory name
+format = "$character $directory $git_branch $nodejs"
+
+# Use a green right arrow as prompt character
+[character]
+success_symbol = "[\uf178](bold green)"
+error_symbol = "[\uf178](bold red)"
+vimcmd_symbol = "[\uf177](bold green)"
+
+# Directory name configuration
+[directory]
+style = "green"
+format = "($style)[$path]($style)"
+truncation_length = 0
+home_symbol = "~"
+
+[git_branch]
+symbol = "󰊢 "
+style = "#f1502f"
+format = "[$symbol\\($branch\\)]($style)"
+
+[nodejs]
+symbol = "󰎙 "
+style = "green"
+format = "[$symbol$version]($style) "
+detect_extensions = ["js", "mjs", "cjs", "ts", "mts", "cts", "jsx", "tsx", "package.json", "package-lock.json", "node_modules"]
+
+[username]
+disabled = true
+
+[hostname]
+disabled = true
+
+[fill]
+disabled = true
+
+[git_status]
+disabled = true
+
+[time]
+disabled = true
+
+[cmd_duration]
+disabled = true
