@@ -1,0 +1,129 @@
+# Location: ~/.config/starship.toml
+
+add_newline = true
+command_timeout = 2000
+
+format = """$shell$os$username$hostname$directory$git_branch$nodejs$package$php$golang$docker_context
+$character
+"""
+
+# --- Prompt Character ---
+[character]
+success_symbol = "╰⎯"
+error_symbol = "╰⎯"
+vicmd_symbol = "╰⎯"
+vimcmd_replace_one_symbol = "╰⎯"
+vimcmd_replace_symbol     = "╰⎯"
+vimcmd_visual_symbol      = "╰⎯"
+disabled = false
+
+# --- Shell info ---
+[shell]
+format = '╭╴'
+style = 'bold white'
+disabled = false
+
+
+# --- OS ---
+[os]
+format = '[$symbol](bold white) '
+disabled = false
+
+[os.symbols]
+Windows = ' '
+Arch = '󰣇 '
+Android = ' '
+
+# --- Username ---
+[username]
+style_user = 'yellow bold'
+style_root = 'black bold'
+format = '[//](black bold) [$user](#2883ff) '
+disabled = false
+show_always = true
+
+# --- Hostname ---
+[hostname]
+ssh_only = false
+format = '[//](black bold) [$hostname](bold blue) '
+disabled = false
+
+# --- Directory ---
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+truncation_symbol = '…/'
+home_symbol = '~'
+read_only = '  '
+format = '[//](black bold) [$path]($style)[$read_only]($read_only_style) '
+style = '#7ed1fb'
+fish_style_pwd_dir_length = 0
+use_logical_path = true
+
+# --- Git Branch ---
+[git_branch]
+symbol = ' '
+always_show_remote = true
+format = '[//](black bold) [$symbol$branch]($style) '
+style = 'bold red'
+
+# --- Node.js & package managers ---
+[nodejs]
+symbol = ""
+format = "[//](black bold) [$symbol $version]($style) "
+style = "bold green"
+version_format = "v${raw}"
+detect_extensions = ["js", "mjs", "cjs", "ts", "mts", "cts", "jsx", "tsx"]
+detect_files = ["package.json", ".node-version", ".nvmrc"]
+detect_folders = ["node_modules"]
+not_capable_style = "bold red"
+disabled = false
+
+[package]
+format = "[$symbol $version]($style) "
+version_format = "v${raw}"
+display_private = true
+disabled = true
+
+# --- PHP ---
+[php]
+symbol = " "
+format = '[//](black bold) [$symbol $version]($style) '
+version_format = "v${raw}"
+detect_extensions = ["php"]
+detect_files = ["composer.json", ".php-version"]
+detect_folders = []
+style = "bold #39B2FE"
+disabled = false
+
+# --- Go ---
+[golang]
+symbol = " "
+format = '[//](black bold) [$symbol $version]($style) '
+version_format = "v${raw}"
+detect_extensions = ["go"]
+detect_files = ["go.mod", "go.sum", "go.work", "glide.yaml", "Gopkg.yml", "Gopkg.lock", ".go-version"]
+detect_folders = ["Godeps"]
+style = "bold cyan"
+disabled = false
+
+
+# --- Docker ---
+[docker_context]
+symbol = " "
+format = '[//](black bold) [$symbol $context]($style) '
+style = "bold blue"
+only_with_files = true
+detect_files = ["compose.yml", "compose.yaml", "docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+detect_extensions = []
+detect_folders = []
+disabled = false
+
+# --- Command duration ---
+[cmd_duration]
+min_time = 1
+show_milliseconds = true
+format = '[//](black bold) [$duration]($style) '
+style = "bold yellow"
+show_notifications = false
+disabled = false
