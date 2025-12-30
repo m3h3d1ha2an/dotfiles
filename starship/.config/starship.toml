@@ -4,8 +4,7 @@ add_newline = true
 command_timeout = 2000
 
 format = """$shell$os$username$hostname$directory$git_branch$nodejs$package$php$golang$docker_context
-$character
-"""
+$character"""
 
 # --- Prompt Character ---
 [character]
@@ -59,6 +58,7 @@ format = '[//](black bold) [$path]($style)[$read_only]($read_only_style) '
 style = '#7ed1fb'
 fish_style_pwd_dir_length = 0
 use_logical_path = true
+use_os_path_sep = false
 
 # --- Git Branch ---
 [git_branch]
