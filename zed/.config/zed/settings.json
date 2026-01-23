@@ -1,0 +1,117 @@
+{
+  // --- Appearance & Theming ---
+  "theme": {
+    "mode": "dark",
+    "light": "Vercel Dark",
+    "dark": "Vercel Dark"
+  },
+  "icon_theme": "Warm Charmed Icons",
+  "theme_overrides": {
+    "Vercel Dark": {
+      "border.variant": "#000000",
+      "border": "#000000",
+      "toolbar.background": "#000000",
+      "editor.active_line.background": "#000000",
+      "panel.focused_border": "#0a0a0a",
+      "editor.background": "#000000",
+      "editor.gutter.background": "#000000",
+      "terminal.background": "#000000",
+      "syntax": { "comment": { "font_style": "italic" },
+      "comment.doc": { "font_style": "italic" }},
+    },
+  },
+
+  // --- Typography ---
+  "ui_font_size": 16,
+  "ui_font_family": "MartianMono Nerd Font Mono",
+  "buffer_font_size": 15,
+  "buffer_font_family": "MartianMono Nerd Font Mono",
+
+  // --- UI Components ---
+  "title_bar": {
+    "show_onboarding_banner": false,
+    "show_project_items": false,
+    "show_branch_name": false,
+    "show_user_menu": false,
+  },
+  "tab_bar": { "show": false},
+  "toolbar": { "quick_actions": false },
+  "status_bar": { "experimental.show": false },
+  "gutter": { "breakpoints": false },
+
+  // --- Panels & Navigation ---
+  "project_panel": {
+    "default_width": 400,
+    "auto_fold_dirs": false,
+    "starts_open": false,
+    "git_status": false,
+    "sticky_scroll": false,
+    "scrollbar": { "show": "never" },
+    "indent_guides": { "show": "never" },
+  },
+  "outline_panel": {
+    "default_width": 300,
+    "indent_guides": { "show": "never" },
+  },
+  "file_finder": { "modal_max_width": "large" },
+
+  // --- Editor Behavior ---
+  "base_keymap": "VSCode",
+  "autosave": { "after_delay": { "milliseconds": 1000 } },
+  "format_on_save": "on",
+  "debugger": { "save_breakpoints": false },
+
+  // --- Language Specific & System ---
+  "lsp": {
+    "biome": { "settings": { "require_config_file": true } },
+    "vtsls": { "settings": { "typescript": { "tsserver": { "maxTsServerMemory": 8092 } } } },
+    "vscode-css-language-server": { "settings": {"css": { "lint": { "unknownAtRules": "ignore" } } } },
+    "tailwindcss-language-server": {
+      "settings": {
+        "classFunctions": ["cva", "cx", "clsx"],
+        "experimental": { "classRegex": ["\\.className\\s*[+]?=\\s*['\"]([^'\"]*)['\"]", "\\.classList\\.add\\(['\"]([^'\"]*)['\"]"],
+        },
+      },
+    },
+  },
+  "languages": {
+    "JavaScript": {
+      "language_servers": ["biome", "eslint", "!prettier"],
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": { "source.fixAll.biome": true, "source.organizeImports.biome": true, "source.fixAll.eslint": true },
+    },
+    "TypeScript": {
+      "language_servers": ["biome", "vtsls", "tailwindcss-language-server","!prettier"],
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": { "source.fixAll.biome": true, "source.organizeImports.biome": true, "source.fixAll.eslint": true },
+    },
+    "TSX": {
+      "language_servers": ["biome", "vtsls", "tailwindcss-language-server", "!prettier"],
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": { "source.fixAll.biome": true, "source.organizeImports.biome": true, "source.fixAll.eslint": true },
+    },
+    "JSON": { "language_servers": ["biome", "!prettier"], "formatter": { "language_server": { "name": "biome" } } },
+    "JSONC": { "language_servers": ["biome", "!prettier"], "formatter": { "language_server": { "name": "biome" } } },
+    "CSS": {
+      "language_servers": ["biome", "tailwindcss-intellisense-css", "vscode-css-language-server"],
+      "formatter": { "language_server": { "name": "biome" } },
+      "code_actions_on_format": {
+        "source.fixAll.biome": true,
+        "source.organizeImports.biome": true,
+        "source.fixAll.tailwindcss": true
+      }
+    },
+    "HTML": {
+      "language_servers": ["vscode-html-language-server", "tailwindcss-language-server"],
+      "formatter": { "language_server": { "name": "vscode-html-language-server" } }
+    }
+  },
+  "telemetry": { "diagnostics": false, "metrics": false },
+
+  // AI
+  "disable_ai": true,
+  "soft_wrap": "editor_width",
+  "show_wrap_guides": true,
+  "preferred_line_length": 100,
+  "terminal": { "cursor_shape": "bar" },
+}
